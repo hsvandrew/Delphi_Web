@@ -29,14 +29,14 @@
   
 TWebResponse = class(TObject)  
     procedure SetCookieField(Values: TStrings; const ADomain, APath: string;
-      AExpires: TDateTime; ASecure: Boolean; AHttpOnly: Boolean = False; ASameSite: string = 'None');
+      AExpires: TDateTime; ASecure: Boolean; AHttpOnly: Boolean = False; ASameSite: string = 'none');
 end;  
   
 constructor TCookie.Create(Collection: TCollection);
 begin
   inherited Create(Collection);
   FExpires  := -1;
-  FSameSite := 'None';
+  FSameSite := 'none';
 end;
 
 procedure TCookie.AssignTo(Dest: TPersistent);
@@ -78,7 +78,7 @@ end;
 
 
 procedure TWebResponse.SetCookieField(Values: TStrings; const ADomain,
-  APath: string; AExpires: TDateTime; ASecure: Boolean; AHttpOnly: Boolean = False; ASameSite: string = 'None');
+  APath: string; AExpires: TDateTime; ASecure: Boolean; AHttpOnly: Boolean = False; ASameSite: string = 'none');
 var
   I: Integer;
 begin
