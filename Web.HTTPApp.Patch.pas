@@ -70,7 +70,7 @@ begin
         [DayOfWeekStr(Expires), MonthStr(Expires)]);
   if Secure then S := S + 'secure; ';  { do not localize }
   if HttpOnly then S := S + 'httponly; ';  { do not localize } //corrected
-  if FSameSite <> '' then S := S + 'SameSite="'+FSameSite+'"; ';  { do not localize }
+  if FSameSite <> '' then S := S + 'SameSite='+FSameSite+'; ';  { do not localize }
   if Copy(S, Length(S) - 1, MaxInt) = '; ' then
     SetLength(S, Length(S) - 2);
   Result := S;
